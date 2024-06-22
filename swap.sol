@@ -713,7 +713,7 @@ contract BscSwapSale is Ownable {
     ChainlinkPriceOracle public priceOracle;
 
     // PYRX Token address
-    IERC20 public immutable token = IERC20(0x48e8297f52E3EB1529C8aFD76636B89eAc8a9181);
+    IERC20 public immutable token = IERC20(0xcB0A17549a32772303610Ea2CcDF3a3035b3D9fb);
 
     //Fund Wallet
     address public fundWallet = payable(0xC177c5C1E55B12a0AA902A4fCC07dBdBA6DB6857);
@@ -753,7 +753,7 @@ contract BscSwapSale is Ownable {
         (bool callSuccess, ) = payable(msg.sender).call{value: ethAmount}("");
         require(callSuccess, "Call failed");
 
-        token.safeTransferFrom(msg.sender, fundWallet, tokenAmount);
+        // token.safeTransferFrom(msg.sender, fundWallet, tokenAmount);
     }
 
     //DEPOSIT BNB
